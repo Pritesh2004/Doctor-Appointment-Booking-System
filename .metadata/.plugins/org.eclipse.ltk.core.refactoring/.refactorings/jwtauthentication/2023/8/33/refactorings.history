@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;com.jwt.controller.corsConfig.java&apos; to &apos;CorsConfig.java&apos;&#x0D;&#x0A;- Original project: &apos;jwtauthentication&apos;&#x0D;&#x0A;- Original element: &apos;com.jwt.controller.corsConfig.java&apos;&#x0D;&#x0A;- Renamed element: &apos;com.jwt.controller.CorsConfig.java&apos;" description="Rename compilation unit &apos;corsConfig.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.jwt.controller{corsConfig.java" name="CorsConfig.java" references="false" stamp="1692204577776" version="1.0"/>
+</session>

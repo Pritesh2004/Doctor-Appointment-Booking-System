@@ -1,0 +1,48 @@
+package com.jwt.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.jwt.model.User;
+import com.jwt.services.UserService;
+
+@RestController
+@RequestMapping("/user")
+@CrossOrigin(origins="*")
+public class UserController {
+	
+	@Autowired
+	private UserService userService;
+	
+	 @Autowired
+	    public UserController(UserService userService) {
+	        this.userService = userService;
+	    }
+	
+	@PostMapping("/")
+	public User createPatient(@RequestBody User user) throws Exception {
+		
+		user.setRol("Admin");
+		return this.userService.createUser(user);
+		
+	}
+	
+	@GetMapping("/{username}")
+	public User getUser(@PathVariable("username") String username) {
+		
+		return this.userService.getUser(username);
+	}
+
+	@DeleteMapping("/{id}")
+	public void deleteUser(@PathVariable("id") long id) {
+		this.userService.deleteUser(id);
+	}
+	
+}
